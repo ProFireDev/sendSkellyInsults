@@ -1,0 +1,67 @@
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <style>
+        html {
+        	font-family: Abel;
+		}
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #3498eb;
+  border-radius: 4px;
+  outline: none;
+  font-family: Abel;
+}
+input[type=text]:focus {
+  outline: none;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #40a8ff;
+  border-radius: 4px;
+  font-family: Abel;
+}
+button {
+  height:43px;
+  outline: none;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 2px solid #3498eb;
+  font-family: Abel;
+}
+
+button:focus {
+  height:43px;
+  outline: none;
+  background-color: #dbefff;
+  border-radius: 4px;
+  border: 2px solid #40a8ff;
+  font-family: Abel;
+}
+    </style>
+    <body>
+        <h1>Welcome to SendSkellyInsults™</h1>
+         <p>Anything you write here will be sent to Skelly's phone as a push notification</p>
+        <input id="textBox" type="text" placeholder="Write an insult here"/>
+       
+        <button onClick="sendNotification()">Send Insult</button>
+    </body>
+    <script>
+        function sendNotification() {
+            var user
+		    let url = "/sendNotification"
+		    let data = { message:document.getElementById("textBox").value }
+		    $.post(url,data, (data, status) => {
+			    console.log(data);
+                $("#textBox")[0].value = ""
+		    })
+        }
+    </script>
+</html> 
