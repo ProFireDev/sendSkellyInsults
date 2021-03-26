@@ -5,4 +5,4 @@ NodeJS http server with a socket.io communication to an android app for push not
 
 ***this has been moved to https://github.com/vtheskeleton/sendSkellyInsults under @vtheskeleton***
 
-it is now written in kolton
+it is now written in kolton, this repo will be archived to preserve it.
